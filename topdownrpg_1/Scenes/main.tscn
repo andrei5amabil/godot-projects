@@ -8,8 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://dh2w0qw2jv6si" path="res://Assets/fence1_tileset.png" id="5_v638i"]
 [ext_resource type="Texture2D" uid="uid://bjsgoxkmsp4gj" path="res://Assets/house1.png" id="6_tmx7u"]
 [ext_resource type="Texture2D" uid="uid://cjqlhi8asrucq" path="res://Assets/oaks_lab.png" id="7_o7uhb"]
-[ext_resource type="PackedScene" uid="uid://bp3xllj2ebk7p" path="res://Scenes/Tree.tscn" id="8_pspbv"]
-[ext_resource type="PackedScene" uid="uid://cvjsrs863xobn" path="res://Scenes/player.tscn" id="9_3mnff"]
+[ext_resource type="PackedScene" uid="uid://bp3xllj2ebk7p" path="res://Tree.tscn" id="8_pspbv"]
+[ext_resource type="PackedScene" uid="uid://cvjsrs863xobn" path="res://player.tscn" id="9_3mnff"]
 [ext_resource type="Script" path="res://Scripts/area_2d_lab_transport.gd" id="10_pbvdi"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqqqr"]

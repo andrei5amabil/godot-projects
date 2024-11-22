@@ -1,4 +1,4 @@
-class_name Player extends CharacterBody2D
+extends CharacterBody2D
 
 var walk_spd = 10.0
 const tile_size = 16
