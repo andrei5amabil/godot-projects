@@ -112,3 +112,6 @@ func need_to_turn():
 func finished_turning():
 	player_state = Move_State.IDLE
 	
+	
+func collect(item):
+	inventory.insert(item)
