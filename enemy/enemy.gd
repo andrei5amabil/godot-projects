@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
 	if (position.x == path[i].x) and (position.y == path[i].y):
 		if i<n-1:
 			if path[i+1].x > path[i].x:
-				animated_sprite_2d.play("riht")
+				animated_sprite_2d.play("right")
 				animated_sprite_2d.flip_h = false
 			elif path[i+1].x < path[i].x:
 				animated_sprite_2d.play("right")
@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 			i=i+1
 		else:
 			if path[0].x > path[i].x:
-				animated_sprite_2d.play("riht")
+				animated_sprite_2d.play("right")
 				animated_sprite_2d.flip_h = false
 			elif path[0].x < path[i].x:
 				animated_sprite_2d.play("right")
