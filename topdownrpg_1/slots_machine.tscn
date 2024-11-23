@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx15bd2ehk078"]
+[gd_scene load_steps=28 format=3 uid="uid://bx15bd2ehk078"]
 
-[ext_resource type="Texture2D" uid="uid://cuk6butp2gi2m" path="res://Assets/slot-machine1.PNG" id="1_gf01t"]
+[ext_resource type="Texture2D" uid="uid://d0xi8082veac7" path="res://Assets/slots_sheet/spritesheet.png" id="1_hl8hb"]
 [ext_resource type="Script" path="res://area_slots.gd" id="2_civ2f"]
+[ext_resource type="AudioStream" uid="uid://blqxdemgpu6o3" path="res://Assets/y2mate.com - Slot Machine Jackpot Sound Effect.mp3" id="3_oe164"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yw5k"]
 size = Vector2(16, 32)
@@ -9,12 +10,174 @@ size = Vector2(16, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v4xjr"]
 size = Vector2(16, 48)
 
+[sub_resource type="Animation" id="Animation_imyi4"]
+resource_name = "GAMBLE"
+length = 3.0
+step = 0.568
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.568, 1.136),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+
+[sub_resource type="Animation" id="Animation_463kd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_vdwde"]
+resource_name = "JACKPOT"
+loop_mode = 1
+step = 0.568
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_shuro"]
+resource_name = "Med Win"
+loop_mode = 1
+step = 0.568
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_pi8vk"]
+resource_name = "Loser"
+loop_mode = 1
+step = 0.568
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_vugwn"]
+resource_name = "Idle"
+step = 0.568
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pdjh1"]
+_data = {
+"GAMBLE": SubResource("Animation_imyi4"),
+"Idle": SubResource("Animation_vugwn"),
+"JACKPOT": SubResource("Animation_vdwde"),
+"Loser": SubResource("Animation_pi8vk"),
+"Med Win": SubResource("Animation_shuro"),
+"RESET": SubResource("Animation_463kd")
+}
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_yqrfd"]
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_uc4ky"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rkjy2"]
+animation = &"GAMBLE"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_2y1fj"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hos12"]
+animation = &"JACKPOT"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_w6j65"]
+animation = &"Loser"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_h3ktf"]
+animation = &"Med Win"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_g1j0m"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4svx3"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2iphu"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8ef3l"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_kvajd"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gfs78"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e43bv"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_phs30"]
+"states/BlendSpace2D 3/node" = SubResource("AnimationNodeBlendSpace2D_yqrfd")
+"states/BlendSpace2D 3/position" = Vector2(1037, 161)
+"states/BlendSpace2D 4/node" = SubResource("AnimationNodeBlendSpace2D_uc4ky")
+"states/BlendSpace2D 4/position" = Vector2(1079, 208)
+states/Gamble/node = SubResource("AnimationNodeAnimation_rkjy2")
+states/Gamble/position = Vector2(341, 107)
+states/Idle/node = SubResource("AnimationNodeAnimation_2y1fj")
+states/Idle/position = Vector2(308, 182)
+states/Jackpot/node = SubResource("AnimationNodeAnimation_hos12")
+states/Jackpot/position = Vector2(523, 33)
+states/Loser/node = SubResource("AnimationNodeAnimation_w6j65")
+states/Loser/position = Vector2(479, 196)
+states/MedWin/node = SubResource("AnimationNodeAnimation_h3ktf")
+states/MedWin/position = Vector2(523, 115)
+states/lose/node = SubResource("AnimationNodeBlendSpace2D_g1j0m")
+states/lose/position = Vector2(1067, 68)
+transitions = ["Start", "Gamble", SubResource("AnimationNodeStateMachineTransition_4svx3"), "Gamble", "Jackpot", SubResource("AnimationNodeStateMachineTransition_2iphu"), "Gamble", "MedWin", SubResource("AnimationNodeStateMachineTransition_8ef3l"), "Gamble", "Loser", SubResource("AnimationNodeStateMachineTransition_kvajd"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_gfs78"), "Idle", "Gamble", SubResource("AnimationNodeStateMachineTransition_e43bv")]
+
 [node name="Slots" type="StaticBody2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, 16)
 scale = Vector2(0.0196078, 0.051282)
-texture = ExtResource("1_gf01t")
+texture = ExtResource("1_hl8hb")
+hframes = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 16)
@@ -27,5 +190,26 @@ script = ExtResource("2_civ2f")
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_v4xjr")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_oe164")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pdjh1")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_phs30")
+advance_expression_base_node = NodePath("../AnimationPlayer")
+anim_player = NodePath("../AnimationPlayer")
+"parameters/BlendSpace2D 3/blend_position" = Vector2(0, 0)
+"parameters/BlendSpace2D 4/blend_position" = Vector2(0, 0)
+parameters/lose/blend_position = Vector2(0, 0)
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="Area2D" method="_on_timer_timeout"]

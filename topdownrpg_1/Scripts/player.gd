@@ -9,6 +9,8 @@ const tile_size = 16
 
 @export var inventory : Inv
 
+
+
 var initial_position = Vector2.ZERO
 var input_direction = Vector2.ZERO
 var is_moving = false
