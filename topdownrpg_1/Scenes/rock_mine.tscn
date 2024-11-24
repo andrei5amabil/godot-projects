@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/rock_mine.gd" id="1_op32x"]
 [ext_resource type="Texture2D" uid="uid://cealpksojhry6" path="res://Assets/stone.png" id="2_3pnoe"]
-[ext_resource type="Resource" uid="uid://cwo5h7x27pca3" path="res://inventory/items/rock.tres" id="2_lxmda"]
+[ext_resource type="Resource" uid="uid://dcfkhko4b2742" path="res://inventory/items/rock.tres" id="2_lxmda"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vrmw0"]
 radius = 15.8902

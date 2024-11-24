@@ -1,7 +1,7 @@
 [gd_scene load_steps=28 format=3 uid="uid://bx15bd2ehk078"]
 
+[ext_resource type="Script" path="res://Scenes/slots_machine.gd" id="1_coaid"]
 [ext_resource type="Texture2D" uid="uid://d0xi8082veac7" path="res://Assets/slots_sheet/spritesheet.png" id="1_hl8hb"]
-[ext_resource type="Script" path="res://Scripts/area_slots.gd" id="2_civ2f"]
 [ext_resource type="AudioStream" uid="uid://blqxdemgpu6o3" path="res://Assets/y2mate.com - Slot Machine Jackpot Sound Effect.mp3" id="3_oe164"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yw5k"]
@@ -172,6 +172,7 @@ states/lose/position = Vector2(1067, 68)
 transitions = ["Start", "Gamble", SubResource("AnimationNodeStateMachineTransition_4svx3"), "Gamble", "Jackpot", SubResource("AnimationNodeStateMachineTransition_2iphu"), "Gamble", "MedWin", SubResource("AnimationNodeStateMachineTransition_8ef3l"), "Gamble", "Loser", SubResource("AnimationNodeStateMachineTransition_kvajd"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_gfs78"), "Idle", "Gamble", SubResource("AnimationNodeStateMachineTransition_e43bv")]
 
 [node name="Slots" type="StaticBody2D"]
+script = ExtResource("1_coaid")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(8, 16)
@@ -184,7 +185,6 @@ position = Vector2(8, 16)
 shape = SubResource("RectangleShape2D_0yw5k")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("2_civ2f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(8, 8)
@@ -210,6 +210,9 @@ anim_player = NodePath("../AnimationPlayer")
 "parameters/BlendSpace2D 4/blend_position" = Vector2(0, 0)
 parameters/lose/blend_position = Vector2(0, 0)
 
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="Area2D" method="_on_timer_timeout"]

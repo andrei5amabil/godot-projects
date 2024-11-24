@@ -25,7 +25,9 @@ func substract(item : InvItem, n):
 				itemslots[0].amt = 0
 	update.emit()
 	
-func exists(item : InvItem):
+func exists(item : InvItem) -> int:
 	var itemslots = slots.filter(func(slot):return slot.item == item)
 	if !itemslots.is_empty():
-		return itemslots[0].amt > 0
+		return itemslots[0].amt
+	else:
+		return 0

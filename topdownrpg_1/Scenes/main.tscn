@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://iujxgjt7bdat"]
+[gd_scene load_steps=27 format=4 uid="uid://iujxgjt7bdat"]
 
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_wucsn"]
 [ext_resource type="PackedScene" uid="uid://cyhndmkdj6pe5" path="res://Scenes/rock_mine.tscn" id="2_ed7hv"]
@@ -9,8 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://dh2w0qw2jv6si" path="res://Assets/fence1_tileset.png" id="5_v638i"]
 [ext_resource type="Texture2D" uid="uid://bjsgoxkmsp4gj" path="res://Assets/house1.png" id="6_tmx7u"]
 [ext_resource type="PackedScene" uid="uid://ctxbwvawnsdvu" path="res://Scenes/Tree.tscn" id="6_utyhe"]
+[ext_resource type="Resource" uid="uid://dcfkhko4b2742" path="res://inventory/items/rock.tres" id="7_bbrka"]
 [ext_resource type="Texture2D" uid="uid://cjqlhi8asrucq" path="res://Assets/oaks_lab.png" id="7_o7uhb"]
 [ext_resource type="PackedScene" uid="uid://dnpmq5qfdrsa3" path="res://Scenes/NPC.tscn" id="7_rw16d"]
+[ext_resource type="Resource" uid="uid://cf75jmjuln8kd" path="res://inventory/items/coin.tres" id="8_nhpqu"]
 [ext_resource type="PackedScene" uid="uid://cvjsrs863xobn" path="res://Scenes/player.tscn" id="9_3mnff"]
 [ext_resource type="Script" path="res://Scripts/area_2d_lab_transport.gd" id="10_pbvdi"]
 [ext_resource type="PackedScene" uid="uid://dwv6td4il1lvj" path="res://Scenes/enemy.tscn" id="14_8hidr"]
@@ -949,6 +951,8 @@ position = Vector2(1042, -206)
 z_index = 2
 y_sort_enabled = true
 position = Vector2(98, 34)
+item_wanted = ExtResource("7_bbrka")
+item_given = ExtResource("8_nhpqu")
 
 [node name="Buildings" type="TileMapLayer" parent="."]
 z_index = 1
@@ -979,6 +983,7 @@ player = NodePath("../Player")
 
 [node name="Slots" parent="." instance=ExtResource("5_o4lvf")]
 position = Vector2(162, 90)
+item = ExtResource("8_nhpqu")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
