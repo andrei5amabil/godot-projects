@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnpmq5qfdrsa3"]
 
 [ext_resource type="Texture2D" uid="uid://dqsx2ldslr1le" path="res://Assets/Young_CPopa_Full.png" id="1_ccsku"]
-[ext_resource type="Script" path="res://npc.gd" id="1_trgm8"]
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="1_trgm8"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ugemc"]
 radius = 16.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jf44lt68bs7g"
-path="res://.godot/imported/grass1_tileset.png-150d49ff0d037558eea42013b9da2559.ctex"
+uid="uid://bw4pqwyvsvpmc"
+path="res://.godot/imported/inv_slot-removebg-preview.png-369dcf7072a59b3680362197dc812802.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://grass1_tileset.png"
-dest_files=["res://.godot/imported/grass1_tileset.png-150d49ff0d037558eea42013b9da2559.ctex"]
+source_file="res://Assets/inv_slot-removebg-preview.png"
+dest_files=["res://.godot/imported/inv_slot-removebg-preview.png-369dcf7072a59b3680362197dc812802.ctex"]
 
 [params]
 
