@@ -1,8 +1,7 @@
-[gd_scene load_steps=58 format=3 uid="uid://cvjsrs863xobn"]
+[gd_scene load_steps=57 format=3 uid="uid://cvjsrs863xobn"]
 
 [ext_resource type="Script" path="res://Player_Scripts/player.gd" id="1_5dufa"]
 [ext_resource type="Texture2D" uid="uid://bhx454m4o0f7t" path="res://Player_Res/Male_Spritesheet.png" id="1_ij0gq"]
-[ext_resource type="Resource" uid="uid://cybtgg0jvnt1e" path="res://inventory/player_inv.tres" id="2_pfsfd"]
 [ext_resource type="PackedScene" uid="uid://bl2p34s10togx" path="res://inventory/inv_ui.tscn" id="4_3oofh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox5by"]
@@ -609,7 +608,6 @@ graph_offset = Vector2(-9.02253, 31.6216)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-192, -176)
 script = ExtResource("1_5dufa")
-inv = ExtResource("2_pfsfd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(192, 176.188)

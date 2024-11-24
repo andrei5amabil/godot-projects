@@ -28,10 +28,12 @@ func _on_timer_timeout():
 
 func _on_area_2d_body_entered(body: Player):
 	player = body
+	print("entered rock mining area")
 	if !entered:
 		entered = true
 
 
 func _on_area_2d_body_exited(body: Player) -> void:
+	print("exited rock mining area")
 	entered = false
 	pass # Replace with function body.
