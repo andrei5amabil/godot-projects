@@ -16,3 +16,4 @@ func update(slot : Inventory_Slot):
 		else :
 			item_visual.visible = false
 			amount_text.visible = false
+			slot.item = null
