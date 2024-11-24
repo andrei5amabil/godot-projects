@@ -30,12 +30,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float):
-	if entered:
-		if Input.is_action_just_pressed("interact") && !is_already_running:
-			is_already_running = true
-			audio_stream_player_2d.play()
-			anim_state.travel("Gamble")
-			timer.start()
+	if entered :
+		if player.inv.exists(item) >= 1 :
+			if Input.is_action_just_pressed("interact") && !is_already_running:
+				player.inv.substract(item,1)
+				is_already_running = true
+				audio_stream_player_2d.play()
+				anim_state.travel("Gamble")
+				timer.start()
 			
 
 func _on_area_2d_body_entered(body: Player) -> void:
@@ -56,38 +58,26 @@ func _on_timer_timeout():
 		if g1 == 7 || g2 == 7:
 			print("Medium Win")
 			anim_state.travel("MedWin")
-			player.collect(item)
-			player.collect(item)
+			player.collect(item,2)
 		elif g1 <= 5 || g2 >= 5:
 			print("Medium Win")
 			anim_state.travel("MedWin")
-			player.collect(item)
-			player.collect(item)
+			player.collect(item, 2)
 		elif (g1 + g2 + g3) / 3 > 5:
 			print("Small Win")
 			anim_state.travel("MedWin")
-			player.collect(item)
-			player.collect(item)
+			player.collect(item, 2)
 		
 		elif g1 == g2 && g2 == g3:
 			if g1 == 7:
 				print("JACKPOT")
 				anim_state.travel("Jackpot")
-				player.collect(item)
-				player.collect(item)
-				player.collect(item)
-				player.collect(item)
-				player.collect(item)
-				player.collect(item)
-				player.collect(item)
+				player.collect(item, 7)
 			if g1 == 3:
 				print("Big Win")
 				anim_state.travel("Jackpot")
-				player.collect(item)
-				player.collect(item)
-				player.collect(item)
+				player.collect(item, 3)
 	else:
 		print("Loser")
 		anim_state.travel("Loser")
-		player.lose(item,1)
 	is_already_running = false

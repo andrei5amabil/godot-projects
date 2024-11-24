@@ -16,7 +16,7 @@ func _process(_delta):
 			if player.inv.exists(item_wanted) > 1:
 				print("check2")
 				player.inv.substract(item_wanted, 2)
-				player.inv.insert(item_given)
+				player.inv.insert(item_given,1)
 			else:
 				print("hehehe")
 	pass

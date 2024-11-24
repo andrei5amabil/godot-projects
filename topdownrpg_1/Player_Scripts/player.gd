@@ -104,8 +104,8 @@ func need_to_turn():
 func finished_turning():
 	player_state = Move_State.IDLE
 	
-func collect(item):
-	inv.insert(item)
+func collect(item,n):
+	inv.insert(item,n)
 	pass
 	
 func lose(item, n):

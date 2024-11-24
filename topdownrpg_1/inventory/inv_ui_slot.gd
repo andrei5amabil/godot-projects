@@ -8,7 +8,11 @@ func update(slot : Inventory_Slot):
 		item_visual.visible = false
 		amount_text.visible = false
 	else:
-		item_visual.visible = true
-		item_visual.texture = slot.item.texture
-		amount_text.visible = true
-		amount_text.text = str(slot.amt)
+		if slot.amt > 0:
+			item_visual.visible = true
+			item_visual.texture = slot.item.texture
+			amount_text.visible = true
+			amount_text.text = str(slot.amt)
+		else :
+			item_visual.visible = false
+			amount_text.visible = false

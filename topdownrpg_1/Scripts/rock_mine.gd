@@ -15,7 +15,7 @@ func _process(_delta):
 	if entered:
 		if has_rocks:
 			if Input.is_action_just_pressed("interact"):
-				player.collect(item)
+				player.collect(item,1)
 				has_rocks = false
 				timer.start()
 	pass
