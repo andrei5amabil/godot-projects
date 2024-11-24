@@ -1,7 +1,9 @@
-[gd_scene load_steps=41 format=3 uid="uid://cvjsrs863xobn"]
+[gd_scene load_steps=43 format=3 uid="uid://cvjsrs863xobn"]
 
 [ext_resource type="Texture2D" uid="uid://bhx454m4o0f7t" path="res://Player_Res/Male_Spritesheet.png" id="1_ij0gq"]
 [ext_resource type="Script" path="res://Player_Scripts/player.gd" id="1_wcx41"]
+[ext_resource type="Resource" uid="uid://cybtgg0jvnt1e" path="res://inventory/player_inv.tres" id="2_yv885"]
+[ext_resource type="PackedScene" uid="uid://bl2p34s10togx" path="res://inventory/inv_ui.tscn" id="3_r1kdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox5by"]
 size = Vector2(16, 32)
@@ -468,7 +470,9 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-192, -176)
+collision_layer = 3
 script = ExtResource("1_wcx41")
+inv = ExtResource("2_yv885")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(192, 176.188)
@@ -500,13 +504,20 @@ parameters/Walk/blend_position = Vector2(0, 0)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(208, 208)
-zoom = Vector2(2, 2)
+zoom = Vector2(2.5, 2.5)
 limit_left = 0
 limit_top = 0
 limit_right = 1280
 limit_bottom = 720
 position_smoothing_enabled = true
+position_smoothing_speed = 32.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(200, 192)
 target_position = Vector2(0, 24)
+
+[node name="Inv_UI" parent="." instance=ExtResource("3_r1kdb")]
+offset_left = 161.0
+offset_top = 111.0
+offset_right = 241.0
+offset_bottom = 173.0

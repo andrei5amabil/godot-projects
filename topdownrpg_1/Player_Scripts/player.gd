@@ -7,6 +7,8 @@ const tile_size = 16
 @onready var anim_state = anim_tree.get("parameters/playback")
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 
+@export var inv : Inv
+
 var initial_position = Vector2.ZERO
 var input_direction = Vector2.ZERO
 var is_moving = false
@@ -22,6 +24,9 @@ var player_facing = Facing_Direction.DOWN
 func _ready():
 	anim_tree.active = true
 	initial_position = position
+	if Global.is_elsewhere && Global.player_position_on_transition != Vector2():
+		position = Global.player_position_on_transition
+		
 
 func _physics_process(delta):
 	if player_state == Move_State.TURNING :
@@ -99,3 +104,12 @@ func need_to_turn():
 func finished_turning():
 	player_state = Move_State.IDLE
 	
+func collect(item):
+	inv.insert(item)
+	pass
+	
+func lose(item, n):
+	inv.substract(item,n)
+	
+func check(item):
+	inv.exists(item)
