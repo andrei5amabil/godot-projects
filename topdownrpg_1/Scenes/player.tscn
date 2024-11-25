@@ -636,7 +636,7 @@ active = false
 tree_root = SubResource("AnimationNodeStateMachine_k7ari")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0.00158978, 0.946903)
-parameters/Sprint/blend_position = Vector2(-0.0017544, 1)
+parameters/Sprint/blend_position = Vector2(-0.158983, -0.868263)
 parameters/Turn/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
 
