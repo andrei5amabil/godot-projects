@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cyhndmkdj6pe5"]
+[gd_scene load_steps=7 format=3 uid="uid://cyhndmkdj6pe5"]
 
 [ext_resource type="Script" path="res://Scripts/rock_mine.gd" id="1_op32x"]
 [ext_resource type="Texture2D" uid="uid://cealpksojhry6" path="res://Assets/stone.png" id="2_3pnoe"]
 [ext_resource type="Resource" uid="uid://dcfkhko4b2742" path="res://inventory/items/rock.tres" id="2_lxmda"]
+[ext_resource type="PackedScene" uid="uid://d7hke3pra4bw" path="res://Scenes/textbox.tscn" id="4_vgv4e"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vrmw0"]
 radius = 15.8902
@@ -29,7 +30,7 @@ z_index = 1
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_vrmw0")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="rock_timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
 
@@ -37,6 +38,14 @@ one_shot = true
 position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_wsdcd")
 
+[node name="Textbox" parent="." instance=ExtResource("4_vgv4e")]
+text_queue = ["Rock is on cooldown"]
+
+[node name="ui_cd" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="rock_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="rock_timer" to="." method="_on_rock_timer_timeout"]
+[connection signal="timeout" from="ui_cd" to="." method="_on_ui_cd_timeout"]

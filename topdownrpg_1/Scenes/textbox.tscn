@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://d7hke3pra4bw"]
+[gd_scene load_steps=5 format=3 uid="uid://d7hke3pra4bw"]
 
+[ext_resource type="Script" path="res://Scripts/textbox.gd" id="1_0bicu"]
 [ext_resource type="FontFile" uid="uid://bkrec86nrnkqd" path="res://Assets/stepalange-font/Stepalange-x3BLm.otf" id="1_861ok"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5ubw2"]
@@ -13,8 +14,9 @@ border_width_bottom = 8
 bg_color = Color(0.147672, 0.147672, 0.147672, 1)
 
 [node name="Textbox" type="CanvasLayer"]
+script = ExtResource("1_0bicu")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="TextboxContainer" type="MarginContainer" parent="."]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
@@ -26,32 +28,32 @@ offset_bottom = -16.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" type="Panel" parent="MarginContainer"]
+[node name="Panel" type="Panel" parent="TextboxContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_5ubw2")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="TextboxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 16
 theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="Panel" type="Panel" parent="MarginContainer/MarginContainer"]
+[node name="Panel" type="Panel" parent="TextboxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_2csl1")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="TextboxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Start" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Start" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_861ok")
 theme_override_font_sizes/font_size = 128
 text = "*"
 
-[node name="Message" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Message" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(1145, 224)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -62,7 +64,7 @@ text = "text text text "
 autowrap_mode = 2
 clip_text = true
 
-[node name="End" type="Label" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="End" type="Label" parent="TextboxContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8

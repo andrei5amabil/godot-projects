@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dnpmq5qfdrsa3"]
+[gd_scene load_steps=6 format=3 uid="uid://dnpmq5qfdrsa3"]
 
 [ext_resource type="Texture2D" uid="uid://dqsx2ldslr1le" path="res://Assets/Young_CPopa_Full.png" id="1_ccsku"]
 [ext_resource type="Script" path="res://Scripts/npc.gd" id="1_trgm8"]
+[ext_resource type="PackedScene" uid="uid://d7hke3pra4bw" path="res://Scenes/textbox.tscn" id="3_6hlst"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ugemc"]
 radius = 16.0
@@ -29,6 +30,9 @@ shape = SubResource("CircleShape2D_ugemc")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(8, 16)
 shape = SubResource("CircleShape2D_vyx27")
+
+[node name="Textbox" parent="." instance=ExtResource("3_6hlst")]
+text_queue = ["cf papuse", "hehehe", "pa papuse"]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
