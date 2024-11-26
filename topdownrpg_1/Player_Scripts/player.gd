@@ -9,9 +9,13 @@ const tile_size = 16
 
 @export var inv : Inv
 
+#signals for followers
+signal stopped
+signal moving
+
 #parameters for movement
-var initial_position = Vector2.ZERO 
-var input_direction = Vector2.ZERO 
+var initial_position = Vector2.ZERO
+var input_direction = Vector2.ZERO
 var is_moving = false
 var per_moved_to_next = 0
 
@@ -26,20 +30,21 @@ func _ready():
 	initial_position = position
 	if Global.is_elsewhere && Global.player_position_on_transition != Vector2():
 		position = Global.player_position_on_transition
-		
+	
 func _physics_process(delta):
 	if player_state == Move_State.TURNING :
 		return
 	elif is_moving == false:
-		process_player_movement_input() 
-	elif input_direction != Vector2.ZERO: 
+		process_player_movement_input()
+	elif input_direction != Vector2.ZERO:
 		anim_state.travel("Walk")
-		move(delta) 
+		move(delta)
 	else:
 		anim_state.travel("Idle")
 		is_moving = false
 
 func move(delta):
+	
 	
 	var is_sprinting = 1 + 2 * int(Input.is_action_pressed("sprint")) #speed up daca e shift, nu modifica altfel
 	
@@ -49,13 +54,15 @@ func move(delta):
 	
 	ray_cast_2d.target_position = desired_pos
 	ray_cast_2d.force_raycast_update()
+	
 	#testing if player can move
 	if !ray_cast_2d.is_colliding():
-	
+		moving.emit(walk_spd * is_sprinting * 0.265)
 		if per_moved_to_next >= 1.0 :
 			position = initial_position + (tile_size * input_direction) #fixeaza pozitia 
 			per_moved_to_next = 0.0
 			is_moving = false #si opreste miscarea
+			stopped.emit(position)
 		else:
 			position = initial_position + (tile_size * input_direction * per_moved_to_next) #misca playerul
 	else:
@@ -78,6 +85,7 @@ func process_player_movement_input():
 		anim_tree.set("parameters/Walk/blend_position", input_direction);
 		anim_tree.set("parameters/Turn/blend_position", input_direction);
 		anim_tree.set("parameters/Sprint/blend_position", input_direction);
+		
 		if need_to_turn():
 			player_state = Move_State.TURNING
 			anim_state.travel("Turn")
@@ -109,8 +117,8 @@ func need_to_turn():
 func finished_turning():
 	player_state = Move_State.IDLE
 	
-func collect(item,n):
-	inv.insert(item,n)
+func collect(item):
+	inv.insert(item)
 	pass
 	
 func lose(item, n):
