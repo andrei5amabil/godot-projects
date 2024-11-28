@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_tjabu")
-name = ""
+name = "coin"
 texture = ExtResource("2_3onmq")

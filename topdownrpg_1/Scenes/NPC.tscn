@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://dnpmq5qfdrsa3"]
+
+[ext_resource type="Texture2D" uid="uid://dqsx2ldslr1le" path="res://Assets/Young_CPopa_Full.png" id="1_ccsku"]
+[ext_resource type="Script" path="res://Scripts/npc.gd" id="1_trgm8"]
+[ext_resource type="PackedScene" uid="uid://d7hke3pra4bw" path="res://Scenes/textbox.tscn" id="3_6hlst"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ugemc"]
+radius = 16.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vyx27"]
+radius = 16.0
+
+[node name="RockNPC" type="CharacterBody2D"]
+script = ExtResource("1_trgm8")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-8, 0)
+texture = ExtResource("1_ccsku")
+centered = false
+hframes = 4
+vframes = 4
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(9, 15)
+shape = SubResource("CircleShape2D_ugemc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(8, 16)
+shape = SubResource("CircleShape2D_vyx27")
+
+[node name="Textbox" parent="." instance=ExtResource("3_6hlst")]
+text_queue = ["cf papuse", "hehehe", "pa papuse"]
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
