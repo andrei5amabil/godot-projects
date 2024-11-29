@@ -17,19 +17,24 @@ func _ready():
 	pass
 
 func _process(_delta):
+	textbox.override_sm = true
 	if entered:
-		if has_rocks:
-			if Input.is_action_just_pressed("interact"):
-				can_receive_ui = false
-				ui_cd.start()
+		if Input.is_action_just_pressed("interact"):
+			textbox.can_get_user_input = false
+			ui_cd.start()
+			if has_rocks:
 				player.collect(item,1)
 				has_rocks = false
+				
+				textbox.index = 0
+				textbox.add_text()
+				textbox.set_state_reading()
+				
 				rock_timer.start()
-		else :
-			if can_receive_ui && Input.is_action_just_pressed("interact"):
-				can_receive_ui = false
-				ui_cd.start()
-				textbox.set_state_ready()
+			else :
+				textbox.index = 1
+				textbox.add_text()
+				textbox.set_state_reading()
 	pass
 
 
@@ -55,4 +60,4 @@ func _on_area_2d_body_exited(body: Player) -> void:
 
 
 func _on_ui_cd_timeout() -> void:
-	can_receive_ui = true
+	textbox.can_get_user_input = true

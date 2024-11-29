@@ -5,6 +5,9 @@ class_name Textbox extends CanvasLayer
 @onready var end: Label = $TextboxContainer/MarginContainer/HBoxContainer/End
 @onready var message: Label = $TextboxContainer/MarginContainer/HBoxContainer/Message
 
+var can_get_user_input = true
+
+var override_sm = false
 
 var next_text
 
@@ -32,29 +35,65 @@ func _ready():
 	print(text_queue.size())
 	pass
 
-func _process(delta):
+func _process(_delta):
+	if !override_sm:
+		match current_state:
+			State.IDLE:
+				if can_get_user_input:
+					pass
+				pass
+			State.READY:
+				if index < text_queue.size():
+					add_text()
+				else:
+					hide_text()
+					index = 0
+					change_state(State.IDLE)
+				pass
+			State.READING:
+				if can_get_user_input:
+					if Input.is_action_just_pressed("interact"):
+						tween.kill()
+						message.visible_ratio = 1.0
+						end.text = "v"
+						change_state(State.DONE)
+				pass
+			State.DONE:
+				if can_get_user_input:
+					if Input.is_action_just_pressed("interact"):
+						change_state(State.READY)
+				pass
+	else:
+		custom_sm()
+
+
+
+func custom_sm():
 	match current_state:
-		State.IDLE:
-			pass
-		State.READY:
-			if index < text_queue.size():
-				add_text()
-			else:
+			State.IDLE:
 				hide_text()
 				index = 0
-				change_state(State.IDLE)
-			pass
-		State.READING:
-			if Input.is_action_just_pressed("interact"):
-				tween.kill()
-				message.visible_ratio = 1.0
-				end.text = "v"
-				change_state(State.DONE)
-			pass
-		State.DONE:
-			if Input.is_action_just_pressed("interact"):
-				change_state(State.READY)
-			pass
+				set_state_idle()
+				pass
+			State.READY:
+				if index < text_queue.size():
+					add_text()
+				else:
+					hide_text()
+					index = 0
+					set_state_idle()
+				pass
+			State.READING:
+				if can_get_user_input && Input.is_action_just_pressed("interact"):
+					tween.kill()
+					message.visible_ratio = 1.0
+					end.text = "v"
+					set_state_done()
+				pass
+			State.DONE:
+				if can_get_user_input && Input.is_action_just_pressed("interact"):
+					set_state_idle()
+				pass
 
 func hide_text():
 	start.text = ""
@@ -71,15 +110,15 @@ func add_text():
 	queue_text(index)
 	index += 1
 	message.text = next_text
-	change_state(State.READING)
+	set_state_reading()
 	message.visible_ratio = 0.0
 	show_text()
 	tween = create_tween()
-	tween.tween_property(message, "visible_ratio", 1.0, ( 0.05 * next_text.length() ) )
+	tween.tween_property(message, "visible_ratio", 1.0, ( 0.01 * next_text.length() ) )
 	tween.connect("finished", on_tween_finished)
 	
 func on_tween_finished():
-	change_state(State.DONE)
+	set_state_done()
 	end.text = "v"
 
 func change_state(next_state):
@@ -100,6 +139,12 @@ func set_state_ready():
 	
 func set_state_idle():
 	current_state = State.IDLE
+
+func set_state_reading():
+	current_state = State.READING
+	
+func set_state_done():
+	current_state = State.DONE
 
 func reset_index():
 	index = 0

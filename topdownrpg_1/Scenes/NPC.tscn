@@ -32,7 +32,11 @@ position = Vector2(8, 16)
 shape = SubResource("CircleShape2D_vyx27")
 
 [node name="Textbox" parent="." instance=ExtResource("3_6hlst")]
-text_queue = ["cf papuse", "hehehe", "pa papuse"]
+text_queue = ["cf papuse", "oferta speciala: 2 pietre pentru un banut; ce zici hehehe", "doresti ?", "Va multumesc!", "da-te-n sange", "pa papuse"]
+
+[node name="ui_cd" type="Timer" parent="."]
+one_shot = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[connection signal="timeout" from="ui_cd" to="." method="_on_ui_cd_timeout"]
