@@ -58,9 +58,6 @@ func _on_area_2d_body_exited(body: Player):
 	textbox.reset_index()
 
 
-<<<<<<< HEAD
-func _on_ui_cd_timeout():
-=======
+
 func _on_ui_cd_timeout() -> void:
->>>>>>> 955a1f0f91f93f0f2831011249118f94e317f537
 	textbox.can_get_user_input = true
