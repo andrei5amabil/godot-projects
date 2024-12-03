@@ -46,6 +46,6 @@ wait_time = 0.5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="rock_timer" to="." method="_on_rock_timer_timeout"]
 [connection signal="timeout" from="rock_timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="rock_timer" to="." method="_on_rock_timer_timeout"]
 [connection signal="timeout" from="ui_cd" to="." method="_on_ui_cd_timeout"]

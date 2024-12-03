@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2f1ned7knjcx"]
+
+[ext_resource type="Script" path="res://transport.gd" id="1_ygerj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umo1o"]
+radius = 35.0571
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_ygerj")
+dest = "res://Scenes/lab.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_umo1o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
