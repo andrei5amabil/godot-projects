@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene load_steps=58 format=3 uid="uid://cvjsrs863xobn"]
 
 [ext_resource type="Script" path="res://Player_Scripts/player.gd" id="1_5dufa"]
@@ -677,6 +678,14 @@ metadata/_edit_use_anchors_ = true
 
 [ext_resource type="Texture2D" uid="uid://bhx454m4o0f7t" path="res://Player_Res/Male_Spritesheet.png" id="1_ij0gq"]
 [ext_resource type="Script" path="res://Player_Scripts/player.gd" id="1_wcx41"]
+=======
+[gd_scene load_steps=43 format=3 uid="uid://cvjsrs863xobn"]
+
+[ext_resource type="Texture2D" uid="uid://bhx454m4o0f7t" path="res://Player_Res/Male_Spritesheet.png" id="1_ij0gq"]
+[ext_resource type="Script" path="res://Player_Scripts/player.gd" id="1_wcx41"]
+[ext_resource type="Resource" uid="uid://cybtgg0jvnt1e" path="res://inventory/player_inv.tres" id="2_mj40n"]
+[ext_resource type="PackedScene" uid="uid://bl2p34s10togx" path="res://inventory/inv_ui.tscn" id="4_tqu2l"]
+>>>>>>> 955a1f0f91f93f0f2831011249118f94e317f537
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox5by"]
 size = Vector2(16, 32)
@@ -1144,6 +1153,10 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(-192, -176)
 script = ExtResource("1_wcx41")
+<<<<<<< HEAD
+=======
+inv = ExtResource("2_mj40n")
+>>>>>>> 955a1f0f91f93f0f2831011249118f94e317f537
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(192, 176.188)
@@ -1185,4 +1198,14 @@ position_smoothing_enabled = true
 [node name="RayCast2D" type="RayCast2D" parent="."]
 position = Vector2(200, 192)
 target_position = Vector2(0, 24)
+<<<<<<< HEAD
 >>>>>>> 1bcb00fec47e3f091b5e577a295cd47e2f420148
+=======
+
+[node name="Inv_UI" parent="." instance=ExtResource("4_tqu2l")]
+offset_left = 160.0
+offset_top = 112.0
+offset_right = 240.0
+offset_bottom = 176.0
+metadata/_edit_use_anchors_ = true
+>>>>>>> 955a1f0f91f93f0f2831011249118f94e317f537
