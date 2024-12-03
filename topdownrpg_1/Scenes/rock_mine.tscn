@@ -39,13 +39,13 @@ position = Vector2(8, 8)
 shape = SubResource("CircleShape2D_wsdcd")
 
 [node name="Textbox" parent="." instance=ExtResource("4_vgv4e")]
-text_queue = ["Rock is on cooldown"]
+text_queue = ["Rock collected", "Rock is on cooldown"]
 
 [node name="ui_cd" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
-[connection signal="timeout" from="rock_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="rock_timer" to="." method="_on_rock_timer_timeout"]
+[connection signal="timeout" from="rock_timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="ui_cd" to="." method="_on_ui_cd_timeout"]

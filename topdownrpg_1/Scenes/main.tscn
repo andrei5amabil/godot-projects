@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cjqlhi8asrucq" path="res://Assets/oaks_lab.png" id="7_o7uhb"]
 [ext_resource type="PackedScene" uid="uid://dnpmq5qfdrsa3" path="res://Scenes/NPC.tscn" id="7_rw16d"]
 [ext_resource type="Resource" uid="uid://cf75jmjuln8kd" path="res://inventory/items/coin.tres" id="8_nhpqu"]
-[ext_resource type="PackedScene" uid="uid://cvjsrs863xobn" path="res://Scenes/player.tscn" id="9_3mnff"]
+[ext_resource type="PackedScene" path="res://Scenes/player.tscn" id="9_3mnff"]
 [ext_resource type="Script" path="res://Scripts/area_2d_lab_transport.gd" id="10_pbvdi"]
 [ext_resource type="PackedScene" uid="uid://dwv6td4il1lvj" path="res://Scenes/enemy.tscn" id="14_8hidr"]
 

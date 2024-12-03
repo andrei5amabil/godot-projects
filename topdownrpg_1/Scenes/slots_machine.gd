@@ -29,7 +29,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float):
+func _process(_delta: float):
 	if entered :
 		if player.inv.exists(item) >= 1 :
 			if Input.is_action_just_pressed("interact") && !is_already_running:
@@ -76,7 +76,7 @@ func _on_timer_timeout():
 			if g1 == 3:
 				print("Big Win")
 				anim_state.travel("Jackpot")
-				player.collect(item, 3)
+				player.collect(item, 5)
 	else:
 		print("Loser")
 		anim_state.travel("Loser")
