@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://boxnctpww0r0r"]
+[gd_scene load_steps=12 format=4 uid="uid://boxnctpww0r0r"]
 
 [ext_resource type="Texture2D" uid="uid://cawmlh8i3n86d" path="res://Assets/Hol_Electro.png" id="1_pgbnb"]
 [ext_resource type="Texture2D" uid="uid://1e01elvgutuq" path="res://Assets/background_1.png" id="2_ebmuu"]
@@ -6,8 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dj76gwdvj7057" path="res://Scenes/vendor.tscn" id="5_yfu2p"]
 [ext_resource type="PackedScene" uid="uid://c2f1ned7knjcx" path="res://transport.tscn" id="6_2ajl8"]
 [ext_resource type="PackedScene" uid="uid://beudgta0n48wr" path="res://Scenes/player_alex.tscn" id="6_foi67"]
-[ext_resource type="Texture2D" uid="uid://d1o6sqn50mfag" path="res://Player_Res/Andrei_Full.png" id="7_ahgu6"]
-[ext_resource type="PackedScene" uid="uid://d1hncws8pqre6" path="res://Scenes/follower.tscn" id="8_y35rq"]
+[ext_resource type="PackedScene" uid="uid://ddi8imuybubmi" path="res://Scenes/follower_andrei.tscn" id="8_mpvp1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqt3v"]
 texture = ExtResource("1_pgbnb")
@@ -1457,7 +1456,17 @@ position = Vector2(634, 248)
 
 [node name="Player" parent="." instance=ExtResource("6_foi67")]
 position = Vector2(624, 392)
-sprite_png = ExtResource("7_ahgu6")
 
-[node name="Follower" parent="." instance=ExtResource("8_y35rq")]
-position = Vector2(608, 416)
+[node name="follower_andrei1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_mpvp1")]
+sprite_png = null
+player = NodePath("../Player")
+
+[node name="follower_andrei2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_mpvp1")]
+ordering = 1
+sprite_png = null
+player = NodePath("../follower_andrei1")
+
+[node name="follower_andrei3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_mpvp1")]
+ordering = 2
+sprite_png = null
+player = NodePath("../follower_andrei2")

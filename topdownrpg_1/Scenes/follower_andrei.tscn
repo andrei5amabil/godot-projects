@@ -1,12 +1,11 @@
-[gd_scene load_steps=58 format=3 uid="uid://beudgta0n48wr"]
+[gd_scene load_steps=57 format=3 uid="uid://ddi8imuybubmi"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_wcx41"]
-[ext_resource type="Resource" uid="uid://cybtgg0jvnt1e" path="res://inventory/player_inv.tres" id="2_yv885"]
-[ext_resource type="Texture2D" uid="uid://dqsx2ldslr1le" path="res://Assets/Young_CPopa_Full.png" id="3_k3oua"]
-[ext_resource type="PackedScene" uid="uid://bl2p34s10togx" path="res://inventory/inv_ui.tscn" id="3_r1kdb"]
+[ext_resource type="Texture2D" uid="uid://dqsx2ldslr1le" path="res://Assets/Young_CPopa_Full.png" id="1_bp1qp"]
+[ext_resource type="Script" path="res://Scenes/follower_andrei.gd" id="1_gn0fc"]
+[ext_resource type="Texture2D" uid="uid://d1o6sqn50mfag" path="res://Player_Res/Andrei_Full.png" id="2_qgnky"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ox5by"]
-size = Vector2(16, 40)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_te4r0"]
+size = Vector2(20, 42)
 
 [sub_resource type="Animation" id="Animation_v4udi"]
 resource_name = "Idle_Down"
@@ -604,7 +603,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vr0c0"]
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_u8p54"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_2varx"]
 states/End/position = Vector2(1133, 115)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_6g4sx")
 states/Idle/position = Vector2(309, 68)
@@ -618,45 +617,24 @@ states/Walk/position = Vector2(571, 68)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_8x35x"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_jpxc1"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_3qcci"), "Idle", "Turn", SubResource("AnimationNodeStateMachineTransition_q6wh7"), "Turn", "Idle", SubResource("AnimationNodeStateMachineTransition_7yaea"), "Turn", "Walk", SubResource("AnimationNodeStateMachineTransition_evyyi"), "Walk", "Turn", SubResource("AnimationNodeStateMachineTransition_k26rp"), "Turn", "Sprint", SubResource("AnimationNodeStateMachineTransition_nwfj5"), "Sprint", "Turn", SubResource("AnimationNodeStateMachineTransition_i4cu3"), "Walk", "Sprint", SubResource("AnimationNodeStateMachineTransition_pivs8"), "Sprint", "Walk", SubResource("AnimationNodeStateMachineTransition_f3ngf"), "Sprint", "Idle", SubResource("AnimationNodeStateMachineTransition_yojpn"), "Idle", "Sprint", SubResource("AnimationNodeStateMachineTransition_vr0c0")]
 graph_offset = Vector2(-9.02253, 31.6216)
 
-[node name="Player" type="CharacterBody2D"]
-z_index = 3
-collision_layer = 3
-script = ExtResource("1_wcx41")
-inv = ExtResource("2_yv885")
+[node name="follower_andrei" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_gn0fc")
+sprite_png = ExtResource("2_qgnky")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-9.53674e-07, -2.5)
+position = Vector2(16, 20)
 scale = Vector2(1, 1.25)
-texture = ExtResource("3_k3oua")
-centered = false
-offset = Vector2(0, 2)
+texture = ExtResource("1_bp1qp")
 flip_h = true
 hframes = 4
 vframes = 4
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16, 20)
-shape = SubResource("RectangleShape2D_ox5by")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
-limit_left = 0
-limit_top = 0
-limit_right = 1280
-limit_bottom = 720
-position_smoothing_enabled = true
-position_smoothing_speed = 32.0
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(16, 24)
-target_position = Vector2(0, 24)
-
-[node name="Inv_UI" parent="." instance=ExtResource("3_r1kdb")]
-offset_left = -24.0
-offset_top = -56.0
-offset_right = 56.0
-offset_bottom = 6.0
+position = Vector2(16, 21)
+shape = SubResource("RectangleShape2D_te4r0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -665,7 +643,7 @@ libraries = {
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 active = false
-tree_root = SubResource("AnimationNodeStateMachine_u8p54")
+tree_root = SubResource("AnimationNodeStateMachine_2varx")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0.00158978, 0.946903)
 parameters/Sprint/blend_position = Vector2(-0.0017544, 1)

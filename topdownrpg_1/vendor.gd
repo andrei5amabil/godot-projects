@@ -15,7 +15,7 @@ func _on_body_entered(body: CharacterBody2D) -> void:
 	entered = true
 	player = body
 
-func _on_body_exited(body: CharacterBody2D) -> void:
+func _on_body_exited(_body: CharacterBody2D) -> void:
 	entered = false
 	textbox.hide_text()
 	textbox.set_state_idle()

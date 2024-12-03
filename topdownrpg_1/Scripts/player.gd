@@ -11,8 +11,6 @@ const tile_size = 16
 @export var sprite_png : CompressedTexture2D = null
 @export var inv : Inv
 
-
-
 #signals for followers
 signal stopped
 signal moving
@@ -30,6 +28,9 @@ var player_state = Move_State.IDLE
 var player_facing = Facing_Direction.DOWN
 
 func _ready():
+	
+	sprite_2d.texture = load(Global.chat[0])
+	
 	if sprite_png != null :
 		sprite_2d.texture = sprite_png
 	anim_tree.active = true
@@ -37,6 +38,7 @@ func _ready():
 	if Global.is_elsewhere && Global.player_position_on_transition != Vector2():
 		position = Global.player_position_on_transition
 	
+
 func _physics_process(delta):
 	if player_state == Move_State.TURNING :
 		return
@@ -47,7 +49,9 @@ func _physics_process(delta):
 		move(delta)
 	else:
 		anim_state.travel("Idle")
+		player_state = Move_State.IDLE
 		is_moving = false
+		
 
 func move(delta):
 	
@@ -71,11 +75,13 @@ func move(delta):
 			stopped.emit(position)
 		else:
 			position = initial_position + (tile_size * input_direction * per_moved_to_next) #misca playerul
+			
 	else:
 		is_moving = false
 	pass
 
 func process_player_movement_input():
+	
 	#practic ca sa se deplaseze doar pe 4 directii
 	#trebuie ca o singura valoare din Vector2 sa fie diferita de 0
 	#si atunci in prim ca sa dea valoare la x trb y sa fie 0 si vice versa
@@ -99,8 +105,10 @@ func process_player_movement_input():
 			initial_position = position # in initial position punem pozitia actuala ca sa putem da la 
 										#pozitia actuala pozitia in care vrem sa ajungem
 			is_moving = true # obvious
+			player_state = Move_State.WALKING
 	else :
 		anim_state.travel("Idle")
+		player_state = Move_State.IDLE
 
 func need_to_turn():
 	
