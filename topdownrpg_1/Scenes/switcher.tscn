@@ -1,0 +1,54 @@
+[gd_scene load_steps=3 format=3 uid="uid://bfxdfygm2i271"]
+
+[ext_resource type="Script" path="res://Scenes/switcher.gd" id="1_0f4hi"]
+[ext_resource type="FontFile" uid="uid://bkrec86nrnkqd" path="res://Assets/stepalange-font/Stepalange-x3BLm.otf" id="2_m5trh"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_0f4hi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 376.0
+offset_top = 208.0
+offset_right = 888.0
+offset_bottom = 528.0
+
+[node name="Alex" type="Button" parent="ColorRect"]
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 168.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("2_m5trh")
+theme_override_font_sizes/font_size = 48
+text = "Alex"
+
+[node name="Andrei" type="Button" parent="ColorRect"]
+offset_left = 344.0
+offset_top = 24.0
+offset_right = 480.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("2_m5trh")
+theme_override_font_sizes/font_size = 48
+text = "Andrei"
+
+[node name="Emi" type="Button" parent="ColorRect"]
+offset_left = 32.0
+offset_top = 200.0
+offset_right = 168.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("2_m5trh")
+theme_override_font_sizes/font_size = 48
+text = "Emi"
+
+[node name="Julia" type="Button" parent="ColorRect"]
+offset_left = 344.0
+offset_top = 200.0
+offset_right = 480.0
+offset_bottom = 296.0
+theme_override_fonts/font = ExtResource("2_m5trh")
+theme_override_font_sizes/font_size = 48
+text = "Julia"
+
+[connection signal="pressed" from="ColorRect/Alex" to="." method="_on_alex_pressed"]
+[connection signal="pressed" from="ColorRect/Andrei" to="." method="_on_andrei_pressed"]
+[connection signal="pressed" from="ColorRect/Emi" to="." method="_on_emi_pressed"]
+[connection signal="pressed" from="ColorRect/Julia" to="." method="_on_julia_pressed"]

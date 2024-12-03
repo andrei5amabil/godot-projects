@@ -38,13 +38,13 @@ func on_destination_moving(speed):
 	
 func _process(_delta):
 	if player_man.player_state == player_man.Move_State.IDLE :
-		print("idling")
+		
 		anim_state.travel("Idle")
 	if player_man.player_state == player_man.Move_State.WALKING :
-		print("walking")
+		
 		anim_state.travel("Walk")
 	if player_man.player_state == player_man.Move_State.TURNING :
-		print("turning")
+		
 		anim_state.travel("Turn")
 	
 	if player_man.input_direction != Vector2.ZERO:
