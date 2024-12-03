@@ -6,8 +6,12 @@ const tile_size = 16
 @onready var anim_tree = $AnimationTree
 @onready var anim_state = anim_tree.get("parameters/playback")
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
+@export var sprite_png : CompressedTexture2D = null
 @export var inv : Inv
+
+
 
 #signals for followers
 signal stopped
@@ -26,6 +30,8 @@ var player_state = Move_State.IDLE
 var player_facing = Facing_Direction.DOWN
 
 func _ready():
+	if sprite_png != null :
+		sprite_2d.texture = sprite_png
 	anim_tree.active = true
 	initial_position = position
 	if Global.is_elsewhere && Global.player_position_on_transition != Vector2():

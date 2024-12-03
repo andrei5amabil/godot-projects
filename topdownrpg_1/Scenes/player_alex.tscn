@@ -1,12 +1,12 @@
-[gd_scene load_steps=58 format=3 uid="uid://cb4tgerwe6700"]
+[gd_scene load_steps=58 format=3 uid="uid://beudgta0n48wr"]
 
-[ext_resource type="Script" path="res://Scripts/player.gd" id="1_xi855"]
-[ext_resource type="Resource" uid="uid://cybtgg0jvnt1e" path="res://inventory/player_inv.tres" id="2_6g0aq"]
-[ext_resource type="Texture2D" uid="uid://d1o6sqn50mfag" path="res://Player_Res/Andrei_Full.png" id="3_jy3qe"]
-[ext_resource type="PackedScene" uid="uid://bl2p34s10togx" path="res://inventory/inv_ui.tscn" id="4_3oofh"]
+[ext_resource type="Script" path="res://Scripts/player.gd" id="1_wcx41"]
+[ext_resource type="Resource" uid="uid://cybtgg0jvnt1e" path="res://inventory/player_inv.tres" id="2_yv885"]
+[ext_resource type="Texture2D" uid="uid://dqsx2ldslr1le" path="res://Assets/Young_CPopa_Full.png" id="3_k3oua"]
+[ext_resource type="PackedScene" uid="uid://bl2p34s10togx" path="res://inventory/inv_ui.tscn" id="3_r1kdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ox5by"]
-size = Vector2(32, 40)
+size = Vector2(16, 40)
 
 [sub_resource type="Animation" id="Animation_v4udi"]
 resource_name = "Idle_Down"
@@ -604,7 +604,7 @@ blend_mode = 1
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vr0c0"]
 
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_k7ari"]
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_u8p54"]
 states/End/position = Vector2(1133, 115)
 states/Idle/node = SubResource("AnimationNodeBlendSpace2D_6g4sx")
 states/Idle/position = Vector2(309, 68)
@@ -619,14 +619,15 @@ transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition
 graph_offset = Vector2(-9.02253, 31.6216)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(-200, -176)
-script = ExtResource("1_xi855")
-inv = ExtResource("2_6g0aq")
+z_index = 3
+collision_layer = 3
+script = ExtResource("1_wcx41")
+inv = ExtResource("2_yv885")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(192, 173.5)
-scale = Vector2(1.5, 1.25)
-texture = ExtResource("3_jy3qe")
+position = Vector2(-9.53674e-07, -2.5)
+scale = Vector2(1, 1.25)
+texture = ExtResource("3_k3oua")
 centered = false
 offset = Vector2(0, 2)
 flip_h = true
@@ -635,39 +636,38 @@ vframes = 4
 frame = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(216, 196)
+position = Vector2(16, 20)
 shape = SubResource("RectangleShape2D_ox5by")
 
-[node name="AnimationPlayerplayer" type="AnimationPlayer" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 720
+position_smoothing_enabled = true
+position_smoothing_speed = 32.0
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(16, 24)
+target_position = Vector2(0, 24)
+
+[node name="Inv_UI" parent="." instance=ExtResource("3_r1kdb")]
+offset_left = -39.0
+offset_top = -87.0
+offset_right = 41.0
+offset_bottom = -25.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_tehrp")
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 active = false
-tree_root = SubResource("AnimationNodeStateMachine_k7ari")
-anim_player = NodePath("../AnimationPlayerplayer")
+tree_root = SubResource("AnimationNodeStateMachine_u8p54")
+anim_player = NodePath("../AnimationPlayer")
 parameters/Idle/blend_position = Vector2(0.00158978, 0.946903)
 parameters/Sprint/blend_position = Vector2(-0.0017544, 1)
 parameters/Turn/blend_position = Vector2(0, 0)
 parameters/Walk/blend_position = Vector2(0, 0)
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(208, 208)
-zoom = Vector2(2, 2)
-limit_left = 0
-limit_top = 0
-limit_right = 1280
-limit_bottom = 720
-position_smoothing_enabled = true
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-position = Vector2(216, 200)
-target_position = Vector2(0, 32)
-
-[node name="Inv_UI" parent="." instance=ExtResource("4_3oofh")]
-offset_left = 176.0
-offset_top = 112.0
-offset_right = 256.0
-offset_bottom = 176.0
-metadata/_edit_use_anchors_ = true

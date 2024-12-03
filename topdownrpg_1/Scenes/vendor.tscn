@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dj76gwdvj7057"]
+
+[ext_resource type="Script" path="res://vendor.gd" id="1_pg682"]
+[ext_resource type="Resource" uid="uid://cf75jmjuln8kd" path="res://inventory/items/coin.tres" id="2_rf37y"]
+[ext_resource type="Resource" uid="uid://8vxc85ne01cd" path="res://inventory/items/sandvis.tres" id="3_2q2pi"]
+[ext_resource type="PackedScene" uid="uid://d7hke3pra4bw" path="res://Scenes/textbox.tscn" id="4_kmomx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugumx"]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_pg682")
+item_wanted = ExtResource("2_rf37y")
+item_given = ExtResource("3_2q2pi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_ugumx")
+
+[node name="Textbox" parent="." instance=ExtResource("4_kmomx")]
+visible = false
+text_queue = ["sendvis", "va multumesc!"]
+
+[node name="ui_cd" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="ui_cd" to="." method="_on_ui_cd_timeout"]
