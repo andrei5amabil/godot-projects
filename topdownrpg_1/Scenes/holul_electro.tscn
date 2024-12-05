@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://boxnctpww0r0r"]
+[gd_scene load_steps=13 format=4 uid="uid://boxnctpww0r0r"]
 
 [ext_resource type="Texture2D" uid="uid://cawmlh8i3n86d" path="res://Assets/Hol_Electro.png" id="1_pgbnb"]
 [ext_resource type="Texture2D" uid="uid://1e01elvgutuq" path="res://Assets/background_1.png" id="2_ebmuu"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dj76gwdvj7057" path="res://Scenes/vendor.tscn" id="5_yfu2p"]
 [ext_resource type="PackedScene" uid="uid://c2f1ned7knjcx" path="res://transport.tscn" id="6_2ajl8"]
 [ext_resource type="PackedScene" uid="uid://beudgta0n48wr" path="res://Scenes/player_alex.tscn" id="6_foi67"]
+[ext_resource type="PackedScene" uid="uid://bfxdfygm2i271" path="res://Scenes/switcher.tscn" id="8_7xeea"]
 [ext_resource type="PackedScene" uid="uid://ddi8imuybubmi" path="res://Scenes/follower_andrei.tscn" id="8_mpvp1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqt3v"]
@@ -1458,15 +1459,18 @@ position = Vector2(634, 248)
 position = Vector2(624, 392)
 
 [node name="follower_andrei1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_mpvp1")]
+ordering = 1
 sprite_png = null
 player = NodePath("../Player")
 
 [node name="follower_andrei2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_mpvp1")]
-ordering = 1
+ordering = 2
 sprite_png = null
 player = NodePath("../follower_andrei1")
 
 [node name="follower_andrei3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_mpvp1")]
-ordering = 2
+ordering = 3
 sprite_png = null
 player = NodePath("../follower_andrei2")
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_7xeea")]

@@ -19,7 +19,7 @@ func _ready() -> void:
 	animation_tree.active = true
 	anim_state.travel("Idle")
 	
-	sprite_2d.texture = load( Global.chat[ordering+1] )
+	sprite_2d.texture = load( Global.chat[ordering] )
 	
 	player.stopped.connect(on_destination_stopped)
 	player.moving.connect(on_destination_moving)
@@ -37,6 +37,9 @@ func on_destination_moving(speed):
 	position.y = move_toward(position.y, destination.y, speed)
 	
 func _process(_delta):
+	
+	sprite_2d.texture = load( Global.chat[Global.chat_order[ordering] ])
+	
 	if player_man.player_state == player_man.Move_State.IDLE :
 		
 		anim_state.travel("Idle")

@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bkrec86nrnkqd" path="res://Assets/stepalange-font/Stepalange-x3BLm.otf" id="2_m5trh"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
+visible = false
 script = ExtResource("1_0f4hi")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -13,6 +14,7 @@ offset_right = 888.0
 offset_bottom = 528.0
 
 [node name="Alex" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 24.0
 offset_right = 168.0
@@ -22,6 +24,7 @@ theme_override_font_sizes/font_size = 48
 text = "Alex"
 
 [node name="Andrei" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 344.0
 offset_top = 24.0
 offset_right = 480.0
@@ -31,6 +34,7 @@ theme_override_font_sizes/font_size = 48
 text = "Andrei"
 
 [node name="Emi" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 32.0
 offset_top = 200.0
 offset_right = 168.0
@@ -40,6 +44,7 @@ theme_override_font_sizes/font_size = 48
 text = "Emi"
 
 [node name="Julia" type="Button" parent="ColorRect"]
+layout_mode = 0
 offset_left = 344.0
 offset_top = 200.0
 offset_right = 480.0

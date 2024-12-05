@@ -8,7 +8,7 @@ const tile_size = 16
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
-@export var sprite_png : CompressedTexture2D = null
+@export var ordering : int = 0
 @export var inv : Inv
 
 #signals for followers
@@ -29,17 +29,19 @@ var player_facing = Facing_Direction.DOWN
 
 func _ready():
 	
-	sprite_2d.texture = load(Global.chat[0])
+	sprite_2d.texture = load(Global.chat[ordering])
 	
-	if sprite_png != null :
-		sprite_2d.texture = sprite_png
 	anim_tree.active = true
 	initial_position = position
 	if Global.is_elsewhere && Global.player_position_on_transition != Vector2():
 		position = Global.player_position_on_transition
 	
 
+func _process(_delta):
+	sprite_2d.texture = load( Global.chat[Global.chat_order[ordering] ])
+
 func _physics_process(delta):
+	
 	if player_state == Move_State.TURNING :
 		return
 	elif is_moving == false:
