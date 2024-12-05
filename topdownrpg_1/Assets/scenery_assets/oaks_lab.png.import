@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bjsgoxkmsp4gj"
-path="res://.godot/imported/house1.png-ba649a8daa72dc8ab66799e3a89dead6.ctex"
+uid="uid://cjqlhi8asrucq"
+path="res://.godot/imported/oaks_lab.png-ab0acefada0cf2b8329f495a2b58ff27.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/house1.png"
-dest_files=["res://.godot/imported/house1.png-ba649a8daa72dc8ab66799e3a89dead6.ctex"]
+source_file="res://Assets/scenery_assets/oaks_lab.png"
+dest_files=["res://.godot/imported/oaks_lab.png-ab0acefada0cf2b8329f495a2b58ff27.ctex"]
 
 [params]
 

@@ -6,8 +6,12 @@ extends CanvasLayer
 @onready var julia: Button = $ColorRect/Julia
 
 func _process(_delta):
-	if Input.is_action_just_pressed("change_char"):
-		visible = true
+	if visible == false :
+		if Input.is_action_just_pressed("change_char"):
+			visible = true
+	else :
+		if Input.is_action_just_pressed("change_char"):
+			visible = false
 
 func _on_alex_pressed() -> void:
 	if visible :

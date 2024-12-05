@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bc1vy1fxichv7"
-path="res://.godot/imported/oaks_lab_interior.png-8cbb0bac1869fcfa1d67e55f3af8d91c.ctex"
+uid="uid://1e01elvgutuq"
+path="res://.godot/imported/background_1.png-45450e043571e7c565ce2bb19966e6c5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/oaks_lab_interior.png"
-dest_files=["res://.godot/imported/oaks_lab_interior.png-8cbb0bac1869fcfa1d67e55f3af8d91c.ctex"]
+source_file="res://Assets/scenery_assets/background_1.png"
+dest_files=["res://.godot/imported/background_1.png-45450e043571e7c565ce2bb19966e6c5.ctex"]
 
 [params]
 

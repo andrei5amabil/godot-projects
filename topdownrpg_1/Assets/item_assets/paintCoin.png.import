@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ckscsivbb1wlr"
-path="res://.godot/imported/sandvis.png-e56d31385ab3871fd6e7f749e72b97bc.ctex"
+uid="uid://bv7wa2ibxejhj"
+path="res://.godot/imported/paintCoin.png-d9071782e440f41171e2f21bc59240af.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sandvis.png"
-dest_files=["res://.godot/imported/sandvis.png-e56d31385ab3871fd6e7f749e72b97bc.ctex"]
+source_file="res://Assets/item_assets/paintCoin.png"
+dest_files=["res://.godot/imported/paintCoin.png-d9071782e440f41171e2f21bc59240af.ctex"]
 
 [params]
 

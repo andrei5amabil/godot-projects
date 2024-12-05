@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jf44lt68bs7g"
-path="res://.godot/imported/grass1_tileset.png-7e8b94ae7e3c73fb552b45d32a3d5c9a.ctex"
+uid="uid://3gxpj1yhwole"
+path="res://.godot/imported/rock-removebg-preview (1).png-1f0ffe2dffd6a10afcd964a7d5de3582.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/grass1_tileset.png"
-dest_files=["res://.godot/imported/grass1_tileset.png-7e8b94ae7e3c73fb552b45d32a3d5c9a.ctex"]
+source_file="res://Assets/item_assets/rock-removebg-preview (1).png"
+dest_files=["res://.godot/imported/rock-removebg-preview (1).png-1f0ffe2dffd6a10afcd964a7d5de3582.ctex"]
 
 [params]
 

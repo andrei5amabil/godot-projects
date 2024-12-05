@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bhegfdlu65hhq"
-path="res://.godot/imported/rock-removebg-preview.png-7c4a964e37ffa283e28fec25bce26b4b.ctex"
+uid="uid://bdkb2gjcnxy78"
+path="res://.godot/imported/inv_slot.png-7fac714c56ff6257f1c261f500bca64e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/rock-removebg-preview.png"
-dest_files=["res://.godot/imported/rock-removebg-preview.png-7c4a964e37ffa283e28fec25bce26b4b.ctex"]
+source_file="res://Assets/game-scene_assets/inv_slot.png"
+dest_files=["res://.godot/imported/inv_slot.png-7fac714c56ff6257f1c261f500bca64e.ctex"]
 
 [params]
 

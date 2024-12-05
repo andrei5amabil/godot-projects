@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtltljv4i2ncg"
-path="res://.godot/imported/imageedit_2_2345567874.png-f8e18eb34b11aef1b94c57d51d4ef340.ctex"
+uid="uid://bw4pqwyvsvpmc"
+path="res://.godot/imported/inv_slot-removebg-preview.png-0706a4ada087a2d859889c45f4992c32.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/imageedit_2_2345567874.png"
-dest_files=["res://.godot/imported/imageedit_2_2345567874.png-f8e18eb34b11aef1b94c57d51d4ef340.ctex"]
+source_file="res://Assets/game-scene_assets/inv_slot-removebg-preview.png"
+dest_files=["res://.godot/imported/inv_slot-removebg-preview.png-0706a4ada087a2d859889c45f4992c32.ctex"]
 
 [params]
 

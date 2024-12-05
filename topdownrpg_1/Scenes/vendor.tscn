@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dj76gwdvj7057"]
 
-[ext_resource type="Script" path="res://vendor.gd" id="1_pg682"]
+[ext_resource type="Script" path="res://Scripts/vendor.gd" id="1_pg682"]
 [ext_resource type="Resource" uid="uid://cf75jmjuln8kd" path="res://inventory/items/coin.tres" id="2_rf37y"]
 [ext_resource type="Resource" uid="uid://8vxc85ne01cd" path="res://inventory/items/sandvis.tres" id="3_2q2pi"]
 [ext_resource type="PackedScene" uid="uid://d7hke3pra4bw" path="res://Scenes/textbox.tscn" id="4_kmomx"]

@@ -1,10 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://bfxdfygm2i271"]
 
-[ext_resource type="Script" path="res://Scenes/switcher.gd" id="1_0f4hi"]
+[ext_resource type="Script" path="res://Scripts/switcher.gd" id="1_0f4hi"]
 [ext_resource type="FontFile" uid="uid://bkrec86nrnkqd" path="res://Assets/stepalange-font/Stepalange-x3BLm.otf" id="2_m5trh"]
 
 [node name="CanvasLayer" type="CanvasLayer"]
 visible = false
+follow_viewport_scale = 0.5
 script = ExtResource("1_0f4hi")
 
 [node name="ColorRect" type="ColorRect" parent="."]

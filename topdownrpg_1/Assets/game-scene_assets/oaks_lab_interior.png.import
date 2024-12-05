@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dirr67d7pug1n"
-path="res://.godot/imported/paintCoin-removebg-preview (1).png-959160f198b8a76dc55a14698f329369.ctex"
+uid="uid://bc1vy1fxichv7"
+path="res://.godot/imported/oaks_lab_interior.png-8c5ac0eb9db2d1afc5a5c9c8de2813cf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/paintCoin-removebg-preview (1).png"
-dest_files=["res://.godot/imported/paintCoin-removebg-preview (1).png-959160f198b8a76dc55a14698f329369.ctex"]
+source_file="res://Assets/game-scene_assets/oaks_lab_interior.png"
+dest_files=["res://.godot/imported/oaks_lab_interior.png-8c5ac0eb9db2d1afc5a5c9c8de2813cf.ctex"]
 
 [params]
 

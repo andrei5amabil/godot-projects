@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cyhndmkdj6pe5"]
 
 [ext_resource type="Script" path="res://Scripts/rock_mine.gd" id="1_op32x"]
-[ext_resource type="Texture2D" uid="uid://cealpksojhry6" path="res://Assets/stone.png" id="2_3pnoe"]
+[ext_resource type="Texture2D" uid="uid://cealpksojhry6" path="res://Assets/item_assets/stone.png" id="2_3pnoe"]
 [ext_resource type="Resource" uid="uid://dcfkhko4b2742" path="res://inventory/items/rock.tres" id="2_lxmda"]
 [ext_resource type="PackedScene" uid="uid://d7hke3pra4bw" path="res://Scenes/textbox.tscn" id="4_vgv4e"]
 

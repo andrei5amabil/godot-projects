@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://blqxdemgpu6o3"
+path="res://.godot/imported/y2mate.com - Slot Machine Jackpot Sound Effect.mp3-74b694c4c4b70eb81f5898c044f7ec98.mp3str"
+
+[deps]
+
+source_file="res://Assets/game-scene_assets/y2mate.com - Slot Machine Jackpot Sound Effect.mp3"
+dest_files=["res://.godot/imported/y2mate.com - Slot Machine Jackpot Sound Effect.mp3-74b694c4c4b70eb81f5898c044f7ec98.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

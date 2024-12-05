@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fm7ia1kgp0l3"
-path="res://.godot/imported/tree1.png-bee06456232c1c7e7aa2f9c68bba732a.ctex"
+uid="uid://bhegfdlu65hhq"
+path="res://.godot/imported/rock-removebg-preview.png-1239e4e51a6409ff9f253e365df83a2e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/tree1.png"
-dest_files=["res://.godot/imported/tree1.png-bee06456232c1c7e7aa2f9c68bba732a.ctex"]
+source_file="res://Assets/item_assets/rock-removebg-preview.png"
+dest_files=["res://.godot/imported/rock-removebg-preview.png-1239e4e51a6409ff9f253e365df83a2e.ctex"]
 
 [params]
 

@@ -26,6 +26,7 @@ func _ready() -> void:
 	position = destination
 	
 	
+	
 func on_destination_stopped(destination_pos: Vector2):
 	stopped.emit(position)
 	destination = destination_pos
@@ -36,6 +37,7 @@ func on_destination_moving(speed):
 	position.x = move_toward(position.x, destination.x, speed)
 	position.y = move_toward(position.y, destination.y, speed)
 	
+
 func _process(_delta):
 	
 	sprite_2d.texture = load( Global.chat[Global.chat_order[ordering] ])
@@ -47,7 +49,10 @@ func _process(_delta):
 		
 		anim_state.travel("Walk")
 	if player_man.player_state == player_man.Move_State.TURNING :
-		
+		if player_man.player_facing == player_man.Facing_Direction.UP :
+			z_index = 4
+		if player_man.player_facing == player_man.Facing_Direction.DOWN :
+			z_index = 4 - ordering
 		anim_state.travel("Turn")
 	
 	if player_man.input_direction != Vector2.ZERO:
@@ -55,3 +60,6 @@ func _process(_delta):
 		animation_tree.set("parameters/Walk/blend_position", player_man.input_direction);
 		animation_tree.set("parameters/Turn/blend_position", player_man.input_direction);
 		animation_tree.set("parameters/Sprint/blend_position", player_man.input_direction);
+
+func finished_turning():
+	player_man.player_state = player_man.Move_State.IDLE

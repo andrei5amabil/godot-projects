@@ -18,6 +18,10 @@ func change_chat_leader(x:int):
 	chat_order[0] = x
 	chat_order[x_pos] = tmp
 	player_key_to_position[x] = 0
-	player_key_to_position[0] = x
+	player_key_to_position[tmp] = x_pos
+	
+	print(chat_order[0] , " " , chat_order[1] , " " , chat_order[2] , " " , chat_order[3])
+	print(player_key_to_position[0] , " " , player_key_to_position[1] , " " , player_key_to_position[2] , " " , player_key_to_position[3])
+	
 	pass
 	

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o7bqbsq21kyy"
-path="res://.godot/imported/saci.png-1dc93cf633bb80512ba5fde73aa13833.ctex"
+uid="uid://dh2w0qw2jv6si"
+path="res://.godot/imported/fence1_tileset.png-e76e3a2499742b14b2d0117ebe071e77.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/saci.png"
-dest_files=["res://.godot/imported/saci.png-1dc93cf633bb80512ba5fde73aa13833.ctex"]
+source_file="res://Assets/scenery_assets/fence1_tileset.png"
+dest_files=["res://.godot/imported/fence1_tileset.png-e76e3a2499742b14b2d0117ebe071e77.ctex"]
 
 [params]
 

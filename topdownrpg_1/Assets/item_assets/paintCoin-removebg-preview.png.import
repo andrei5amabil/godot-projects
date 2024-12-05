@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c1lyqvpvw2cth"
-path="res://.godot/imported/slot.png-c49aa056772dccd426063af7b0eb7f38.ctex"
+uid="uid://x57iixkmrjlm"
+path="res://.godot/imported/paintCoin-removebg-preview.png-412bf943cbfebdc0ac6f26d65ab6ebb6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/slot.png"
-dest_files=["res://.godot/imported/slot.png-c49aa056772dccd426063af7b0eb7f38.ctex"]
+source_file="res://Assets/item_assets/paintCoin-removebg-preview.png"
+dest_files=["res://.godot/imported/paintCoin-removebg-preview.png-412bf943cbfebdc0ac6f26d65ab6ebb6.ctex"]
 
 [params]
 

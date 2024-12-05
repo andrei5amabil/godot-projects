@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_afkhb"]
 [ext_resource type="Texture2D" uid="uid://c607cgltqbt5r" path="res://Assets/Julia_Full.png" id="2_k6cqn"]
 [ext_resource type="Script" path="res://Scripts/area_enemy.gd" id="3_wnnqj"]
-[ext_resource type="Texture2D" uid="uid://cuk6butp2gi2m" path="res://Assets/slot-machine1.PNG" id="4_dwxda"]
+[ext_resource type="Texture2D" uid="uid://cuk6butp2gi2m" path="res://Assets/game-scene_assets/slot-machine1.PNG" id="4_dwxda"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7ojnh"]
 atlas = ExtResource("2_k6cqn")

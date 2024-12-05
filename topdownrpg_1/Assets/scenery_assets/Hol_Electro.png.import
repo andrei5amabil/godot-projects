@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dh2w0qw2jv6si"
-path="res://.godot/imported/fence1_tileset.png-06ac8c2f02a8bd822a058541bdf040ff.ctex"
+uid="uid://cawmlh8i3n86d"
+path="res://.godot/imported/Hol_Electro.png-d8d6bab83c38aaf352e48990b28b1368.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/fence1_tileset.png"
-dest_files=["res://.godot/imported/fence1_tileset.png-06ac8c2f02a8bd822a058541bdf040ff.ctex"]
+source_file="res://Assets/scenery_assets/Hol_Electro.png"
+dest_files=["res://.godot/imported/Hol_Electro.png-d8d6bab83c38aaf352e48990b28b1368.ctex"]
 
 [params]
 

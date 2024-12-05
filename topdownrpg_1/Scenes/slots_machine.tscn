@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/slots_machine.gd" id="1_coaid"]
 [ext_resource type="Texture2D" uid="uid://d0xi8082veac7" path="res://Assets/slots_sheet/spritesheet.png" id="1_hl8hb"]
-[ext_resource type="AudioStream" uid="uid://blqxdemgpu6o3" path="res://Assets/y2mate.com - Slot Machine Jackpot Sound Effect.mp3" id="3_oe164"]
+[ext_resource type="AudioStream" uid="uid://blqxdemgpu6o3" path="res://Assets/game-scene_assets/y2mate.com - Slot Machine Jackpot Sound Effect.mp3" id="3_oe164"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0yw5k"]
 size = Vector2(16, 32)

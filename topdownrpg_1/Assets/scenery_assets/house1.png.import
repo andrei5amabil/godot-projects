@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bw4pqwyvsvpmc"
-path="res://.godot/imported/inv_slot-removebg-preview.png-369dcf7072a59b3680362197dc812802.ctex"
+uid="uid://bjsgoxkmsp4gj"
+path="res://.godot/imported/house1.png-e16b89d8296687a47a3bf2f93b0042df.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/inv_slot-removebg-preview.png"
-dest_files=["res://.godot/imported/inv_slot-removebg-preview.png-369dcf7072a59b3680362197dc812802.ctex"]
+source_file="res://Assets/scenery_assets/house1.png"
+dest_files=["res://.godot/imported/house1.png-e16b89d8296687a47a3bf2f93b0042df.ctex"]
 
 [params]
 

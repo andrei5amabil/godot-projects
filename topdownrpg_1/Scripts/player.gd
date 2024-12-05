@@ -15,6 +15,7 @@ const tile_size = 16
 signal stopped
 signal moving
 
+
 #parameters for movement
 var initial_position = Vector2.ZERO
 var input_direction = Vector2.ZERO

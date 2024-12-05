@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cawmlh8i3n86d"
-path="res://.godot/imported/Hol_Electro.png-12c32365a136d2628e93a25ed3a2ee0b.ctex"
+uid="uid://dirr67d7pug1n"
+path="res://.godot/imported/paintCoin-removebg-preview (1).png-3185f92faa88d1301babc786735c851c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Hol_Electro.png"
-dest_files=["res://.godot/imported/Hol_Electro.png-12c32365a136d2628e93a25ed3a2ee0b.ctex"]
+source_file="res://Assets/item_assets/paintCoin-removebg-preview (1).png"
+dest_files=["res://.godot/imported/paintCoin-removebg-preview (1).png-3185f92faa88d1301babc786735c851c.ctex"]
 
 [params]
 
