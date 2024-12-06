@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://1e01elvgutuq" path="res://Assets/scenery_assets/background_1.png" id="2_ebmuu"]
 [ext_resource type="Texture2D" uid="uid://o7bqbsq21kyy" path="res://Assets/scenery_assets/saci.png" id="3_2dcbe"]
 [ext_resource type="PackedScene" uid="uid://dj76gwdvj7057" path="res://Scenes/vendor.tscn" id="5_yfu2p"]
-[ext_resource type="PackedScene" uid="uid://c2f1ned7knjcx" path="res://transport.tscn" id="6_2ajl8"]
+[ext_resource type="PackedScene" uid="uid://c2f1ned7knjcx" path="res://Scenes/transport.tscn" id="6_2ajl8"]
 [ext_resource type="PackedScene" uid="uid://beudgta0n48wr" path="res://Scenes/player_alex.tscn" id="6_foi67"]
 [ext_resource type="PackedScene" uid="uid://bfxdfygm2i271" path="res://Scenes/switcher.tscn" id="8_7xeea"]
 [ext_resource type="PackedScene" uid="uid://ddi8imuybubmi" path="res://Scenes/follower_andrei.tscn" id="8_mpvp1"]
@@ -1503,9 +1503,10 @@ tile_set = SubResource("TileSet_g8rfw")
 position = Vector2(568, 248)
 
 [node name="holExit" parent="." instance=ExtResource("6_2ajl8")]
-position = Vector2(872, 232)
-needs_confirmation = true
+position = Vector2(880, 232)
+dest = "res://Scenes/electro_entrance.tscn"
 source = true
+travel_location = Vector2(32, 304)
 
 [node name="vendor2" parent="." instance=ExtResource("5_yfu2p")]
 position = Vector2(528, 248)
@@ -1513,7 +1514,9 @@ position = Vector2(528, 248)
 [node name="Player" parent="." instance=ExtResource("6_foi67")]
 z_index = 4
 y_sort_enabled = true
-position = Vector2(624, 392)
+position = Vector2(648, 384)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("8_7xeea")]
 
 [node name="follower_andrei1" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_mpvp1")]
 z_index = 4
@@ -1535,5 +1538,3 @@ y_sort_enabled = true
 ordering = 3
 sprite_png = null
 player = NodePath("../follower_andrei2")
-
-[node name="CanvasLayer" parent="." instance=ExtResource("8_7xeea")]

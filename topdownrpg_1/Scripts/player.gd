@@ -34,12 +34,16 @@ func _ready():
 	
 	anim_tree.active = true
 	initial_position = position
-	if Global.is_elsewhere && Global.player_position_on_transition != Vector2():
+	if Global.player_position_on_transition != Vector2():
 		position = Global.player_position_on_transition
+		Global.player_position_on_transition = Vector2()
 	
 
 func _process(_delta):
 	sprite_2d.texture = load( Global.chat[Global.chat_order[ordering] ])
+	
+	if Input.is_action_just_pressed("dance"):
+		dance()
 
 func _physics_process(delta):
 	
@@ -143,3 +147,18 @@ func lose(item, n):
 	
 func check(item):
 	inv.exists(item)
+	
+
+
+func dance():
+	while is_moving == false:
+			player_state = Move_State.TURNING
+			anim_state.travel("Turn")
+			anim_tree.set("parameters/Turn/blend_position", Vector2(1,0) )
+			await get_tree().create_timer(0.25).timeout
+			anim_tree.set("parameters/Turn/blend_position", Vector2(0,-1) )
+			await get_tree().create_timer(0.25).timeout
+			anim_tree.set("parameters/Turn/blend_position", Vector2(-1,0) )
+			await get_tree().create_timer(0.25).timeout
+			anim_tree.set("parameters/Turn/blend_position", Vector2(0,1) )
+			await get_tree().create_timer(0.25).timeout

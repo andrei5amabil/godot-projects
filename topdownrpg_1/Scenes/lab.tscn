@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/lab.gd" id="1_2kvfr"]
 [ext_resource type="Texture2D" uid="uid://bc1vy1fxichv7" path="res://Assets/game-scene_assets/oaks_lab_interior.png" id="2_071cr"]
 [ext_resource type="Texture2D" uid="uid://1e01elvgutuq" path="res://Assets/scenery_assets/background_1.png" id="3_greht"]
-[ext_resource type="PackedScene" uid="uid://c2f1ned7knjcx" path="res://transport.tscn" id="5_gk2se"]
+[ext_resource type="PackedScene" uid="uid://c2f1ned7knjcx" path="res://Scenes/transport.tscn" id="5_gk2se"]
 [ext_resource type="PackedScene" uid="uid://beudgta0n48wr" path="res://Scenes/player_alex.tscn" id="5_jbrj1"]
 [ext_resource type="PackedScene" uid="uid://ddi8imuybubmi" path="res://Scenes/follower_andrei.tscn" id="6_xb5dd"]
 [ext_resource type="Texture2D" uid="uid://cborlrf8xjwxx" path="res://Player_Res/Emi_Full.png" id="7_o2ham"]
@@ -601,20 +601,23 @@ tile_set = SubResource("TileSet_hvs4x")
 
 [node name="Area2D" parent="." instance=ExtResource("5_gk2se")]
 position = Vector2(420, 255)
-dest = "res://Scenes/holul_electro.tscn"
-needs_confirmation = true
+dest = "res://Scenes/electro_entrance.tscn"
+travel_location = Vector2(192, 152)
 
 [node name="Player" parent="." instance=ExtResource("5_jbrj1")]
 position = Vector2(473, 214)
 
 [node name="follower_andrei" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_xb5dd")]
+ordering = 1
 sprite_png = ExtResource("7_o2ham")
 player = NodePath("../Player")
 
 [node name="follower_andrei2" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_xb5dd")]
+ordering = 2
 sprite_png = ExtResource("8_t8gpt")
 player = NodePath("../follower_andrei")
 
 [node name="follower_andrei3" parent="." node_paths=PackedStringArray("player") instance=ExtResource("6_xb5dd")]
+ordering = 3
 sprite_png = ExtResource("9_dc1mr")
 player = NodePath("../follower_andrei2")

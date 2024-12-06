@@ -10,7 +10,7 @@ extends CharacterBody2D
 @onready var animation_tree: AnimationTree = $AnimationTree
 @onready var anim_state = animation_tree.get("parameters/playback")
 
-@onready var player_man = get_parent().get_node("Player")
+@onready var player_man: Player = get_parent().get_node("Player")
 
 signal stopped
 signal moving
